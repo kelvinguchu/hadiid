@@ -30,9 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='scroll-smooth'>
-      <body
-        className={`${poppins.variable} ${openSans.variable} antialiased`}>
+    <html lang='en' className='scroll-smooth overflow-x-hidden'>
+      <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <Header />
         <main className='min-h-screen'>{children}</main>
         <Footer />

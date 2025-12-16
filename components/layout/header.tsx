@@ -124,10 +124,12 @@ export function Header() {
                 <span className='sr-only'>Toggle menu</span>
               </button>
             </SheetTrigger>
-            <SheetContent side='right' className='w-80 p-0'>
+            <SheetContent
+              side='right'
+              className='w-[85vw] max-w-80 p-0 overflow-x-hidden'>
               <div className='flex flex-col h-full'>
                 {/* Mobile Menu Header */}
-                <div className='flex items-center justify-between p-5 border-b bg-muted/30'>
+                <div className='flex items-center justify-start p-2 border-b bg-muted/30'>
                   <Link href='/'>
                     <Image
                       src='/images/favicon.png'

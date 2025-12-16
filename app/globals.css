@@ -139,6 +139,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans), 'Open Sans', system-ui, sans-serif;
+    overflow-x: hidden;
   }
   
   /* Custom scrollbar */
@@ -156,6 +157,7 @@
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
