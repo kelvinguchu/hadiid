@@ -53,7 +53,7 @@ export function ServicesOverview() {
           transition={{ duration: 0.5 }}
           className='flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10'>
           <Badge className='px-4 py-1.5 text-sm font-medium'>
-            Our Products
+            Our Services
           </Badge>
           <Separator className='flex-1 hidden sm:block' />
         </motion.div>

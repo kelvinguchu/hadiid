@@ -178,11 +178,11 @@ export function StorySection() {
                 initial={{ scale: 0, rotate: -10 }}
                 animate={isInView ? { scale: 1, rotate: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.7, type: "spring" }}
-                className='absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8'>
+                className='absolute -bottom-4 left-2 md:-bottom-8 md:-left-8'>
                 <Card className='bg-primary text-primary-foreground border-0 shadow-xl'>
-                  <CardContent className='p-4 md:p-6'>
-                    <div className='text-3xl md:text-4xl font-bold'>15+</div>
-                    <div className='text-sm text-primary-foreground/80'>
+                  <CardContent className='p-3 md:p-6'>
+                    <div className='text-2xl md:text-4xl font-bold'>15+</div>
+                    <div className='text-xs md:text-sm text-primary-foreground/80'>
                       Years of Excellence
                     </div>
                   </CardContent>

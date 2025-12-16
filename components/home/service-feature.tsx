@@ -77,7 +77,7 @@ export function ServiceFeature({
               initial={{ opacity: 0, x: reverse ? -20 : 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className='relative aspect-4/3 lg:aspect-auto min-h-70 rounded-xl overflow-hidden'>
+              className='relative aspect-video md:aspect-4/3 lg:aspect-auto lg:min-h-70 rounded-xl overflow-hidden'>
               <Image
                 src={imageSrc}
                 alt={imageAlt}
