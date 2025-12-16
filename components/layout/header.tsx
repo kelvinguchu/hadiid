@@ -25,15 +25,6 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header className='sticky top-0 z-50'>
@@ -76,13 +67,7 @@ export function Header() {
       </div>
 
       {/* Main navigation */}
-      <nav
-        className={cn(
-          "bg-background border-b transition-all duration-200 ",
-          isScrolled
-            ? "shadow-md border-border"
-            : "border-transparent"
-        )}>
+      <nav className='bg-background border-b border-border'>
         <div className='container mx-auto flex justify-between items-center'>
           {/* Logo */}
           <Link href='/' className='flex items-center'>
@@ -134,10 +119,10 @@ export function Header() {
           {/* Mobile Navigation */}
           <Sheet>
             <SheetTrigger asChild className='lg:hidden'>
-                <button className='p-2 rounded-full hover:bg-accent transition-colors'>
+              <button className='p-2 rounded-full hover:bg-accent transition-colors'>
                 <HiMenu className='h-6 w-6' />
                 <span className='sr-only'>Toggle menu</span>
-                </button>
+              </button>
             </SheetTrigger>
             <SheetContent side='right' className='w-80 p-0'>
               <div className='flex flex-col h-full'>
