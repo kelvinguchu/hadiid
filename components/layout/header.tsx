@@ -27,7 +27,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className='sticky top-0 z-50'>
+    <header className='fixed top-0 left-0 right-0 z-50'>
       {/* Top bar - always visible */}
       <div className='hidden lg:block bg-primary text-primary-foreground text-sm'>
         <div className='container mx-auto py-2.5 flex justify-between items-center'>

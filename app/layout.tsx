@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang='en' className='scroll-smooth overflow-x-hidden'>
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <Header />
-        <main className='min-h-screen'>{children}</main>
+        <main className='min-h-screen pt-16 lg:pt-28'>{children}</main>
         <Footer />
       </body>
     </html>
