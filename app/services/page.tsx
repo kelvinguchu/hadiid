@@ -1,12 +1,22 @@
+import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/page-header";
 import { ServiceDetail, ServicesCTA } from "@/components/services";
 import { WhyChooseUs } from "@/components/home";
+import { generatePageMetadata } from "@/lib/seo-config";
 
-export const metadata = {
-  title: "Our Services - Hadiid Industries",
+export const metadata: Metadata = generatePageMetadata({
+  title: "Our Services | HADIID Industries",
   description:
     "From precision accident repairs to custom vehicle fabrication, we provide expert fleet solutions that keep your business moving forward.",
-};
+  path: "/services",
+  ogImage: "/images-2/hero.jpg",
+  keywords: [
+    "vehicle services",
+    "fleet solutions",
+    "commercial vehicle services",
+    "Kenya transport solutions",
+  ],
+});
 
 const services = [
   {

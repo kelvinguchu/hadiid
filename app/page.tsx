@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   HeroSection,
   FeaturesBar,
@@ -9,6 +10,40 @@ import {
   TestimonialsSection,
   CTASection,
 } from "@/components/home";
+import { siteConfig } from "@/lib/seo-config";
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} - Vehicle Body Building & Fabrication`,
+  description: siteConfig.description,
+  openGraph: {
+    title: `${siteConfig.name} - Vehicle Body Building & Fabrication`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    images: [
+      {
+        url: "/hadiid-photos/DSC09505.jpg",
+        width: 1200,
+        height: 630,
+        alt: "HADIID Industries - Expert Vehicle Body Building",
+      },
+      {
+        url: "/hadiid-photos/DSC09506.jpg",
+        width: 1200,
+        height: 630,
+        alt: "HADIID Industries Workshop",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} - Vehicle Body Building & Fabrication`,
+    description: siteConfig.description,
+    images: ["/hadiid-photos/DSC09505.jpg"],
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+};
 
 export default function Home() {
   return (
@@ -78,9 +113,8 @@ export default function Home() {
         />
 
         <TestimonialsSection />
-
-        <CTASection />
       </div>
+      <CTASection />
     </>
   );
 }

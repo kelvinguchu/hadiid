@@ -72,7 +72,7 @@ export function ServicesOverview() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className='group'>
               <Link href={service.href} className='block h-full'>
-                <Card className='h-full border-border hover:border-primary/40 transition-all duration-300 overflow-hidden'>
+                <Card className='h-full border-border hover:border-primary/40 transition-all duration-300 overflow-hidden pt-0'>
                   <div className='relative h-48 w-full overflow-hidden'>
                     <Image
                       src={service.image}
