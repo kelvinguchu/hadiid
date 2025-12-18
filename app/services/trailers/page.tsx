@@ -13,7 +13,7 @@ import { generatePageMetadata, serviceMetadata } from "@/lib/seo-config";
 const { trailers } = serviceMetadata;
 
 export const metadata: Metadata = generatePageMetadata({
-  title: `${trailers.title} | HADIID Industries`,
+  title: `${trailers.title} | Hadiid Industries`,
   description: trailers.description,
   path: trailers.path,
   ogImage: trailers.ogImage,

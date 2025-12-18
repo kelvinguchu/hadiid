@@ -52,16 +52,16 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/hadiid-photos/DSC09505.jpg",
+        url: `${siteConfig.url}/hadiid-photos/DSC09505.jpg`,
         width: 1200,
         height: 630,
-        alt: "HADIID Industries - Vehicle Body Building & Fabrication",
+        alt: "Hadiid Industries - Vehicle Body Building & Fabrication",
       },
       {
-        url: "/hadiid-photos/DSC09506.jpg",
+        url: `${siteConfig.url}/hadiid-photos/DSC09506.jpg`,
         width: 1200,
         height: 630,
-        alt: "HADIID Industries Workshop",
+        alt: "Hadiid Industries Workshop",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} - Vehicle Body Building & Fabrication`,
     description: siteConfig.description,
-    images: ["/hadiid-photos/DSC09505.jpg"],
+    images: [`${siteConfig.url}/hadiid-photos/DSC09505.jpg`],
   },
   robots: {
     index: true,

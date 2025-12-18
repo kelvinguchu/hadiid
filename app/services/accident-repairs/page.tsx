@@ -15,7 +15,7 @@ import { generatePageMetadata, serviceMetadata } from "@/lib/seo-config";
 const { accidentRepairs } = serviceMetadata;
 
 export const metadata: Metadata = generatePageMetadata({
-  title: `${accidentRepairs.title} | HADIID Industries`,
+  title: `${accidentRepairs.title} | Hadiid Industries`,
   description: accidentRepairs.description,
   path: accidentRepairs.path,
   ogImage: accidentRepairs.ogImage,

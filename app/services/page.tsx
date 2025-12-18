@@ -5,7 +5,7 @@ import { WhyChooseUs } from "@/components/home";
 import { generatePageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Our Services | HADIID Industries",
+  title: "Our Services | Hadiid Industries",
   description:
     "From precision accident repairs to custom vehicle fabrication, we provide expert fleet solutions that keep your business moving forward.",
   path: "/services",

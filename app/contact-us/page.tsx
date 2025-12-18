@@ -4,9 +4,9 @@ import { ContactInfo, ContactForm, ContactMap } from "@/components/contact";
 import { generatePageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Contact Us | HADIID Industries",
+  title: "Contact Us | Hadiid Industries",
   description:
-    "Get in touch with HADIID Industries for custom vehicle body solutions. Request a quote for bus bodies, trailers, truck fabrications, or accident repairs.",
+    "Get in touch with Hadiid Industries for custom vehicle body solutions. Request a quote for bus bodies, trailers, truck fabrications, or accident repairs.",
   path: "/contact-us",
   ogImage: "/images/schoolbuses/DSC09545.webp",
   keywords: [

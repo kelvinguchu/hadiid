@@ -9,9 +9,9 @@ import {
 import { generatePageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "About Us | HADIID Industries",
+  title: "About Us | Hadiid Industries",
   description:
-    "Learn about HADIID Industries Ltd - Engineering advanced fleet solutions that deliver safety, reliability, and maximum uptime across Africa.",
+    "Learn about Hadiid Industries Ltd - Engineering advanced fleet solutions that deliver safety, reliability, and maximum uptime across Africa.",
   path: "/about-us",
   ogImage: "/images/about_us.jpeg",
   keywords: [
@@ -26,7 +26,7 @@ export default function AboutUsPage() {
   return (
     <>
       <PageHeader
-        title='About HADIID Industries'
+        title='About Hadiid Industries'
         subtitle='Engineering advanced fleet solutions that deliver safety, reliability, and maximum uptime across Africa.'
         backgroundImage='/images/about_us.jpeg'
       />

@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 
 // Base URL for the site - Update this for production
 export const siteConfig = {
-  name: "HADIID Industries Ltd",
-  shortName: "HADIID Industries",
+  name: "Hadiid Industries Ltd",
+  shortName: "Hadiid Industries",
   description:
     "Your trusted partner in vehicle body building, fabrication, and repairs. We combine modern technology with expert craftsmanship to deliver unmatched quality.",
-  url: "https://haidindustries.co.ke", // Update with actual domain
+  url: "https://www.hadiidindustries.com",
   ogImage: "/images-2/hero.jpg",
   keywords: [
     "vehicle body building",
@@ -19,11 +19,11 @@ export const siteConfig = {
     "Africa",
     "commercial vehicle",
     "custom fabrication",
-    "HADIID Industries",
+    "Hadiid Industries",
   ],
-  authors: [{ name: "HADIID Industries Ltd" }],
-  creator: "HADIID Industries Ltd",
-  publisher: "HADIID Industries Ltd",
+  authors: [{ name: "Hadiid Industries Ltd" }],
+  creator: "Hadiid Industries Ltd",
+  publisher: "Hadiid Industries Ltd",
   locale: "en_KE",
   type: "website" as const,
   twitter: {
@@ -61,6 +61,10 @@ export function generatePageMetadata({
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
   const image = ogImage || siteConfig.ogImage;
+  // Use absolute URL for OG images
+  const absoluteImageUrl = image.startsWith("http")
+    ? image
+    : `${siteConfig.url}${image}`;
 
   return {
     title,
@@ -80,7 +84,7 @@ export function generatePageMetadata({
       url,
       images: [
         {
-          url: image,
+          url: absoluteImageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -91,7 +95,7 @@ export function generatePageMetadata({
       ...siteConfig.twitter,
       title,
       description,
-      images: [image],
+      images: [absoluteImageUrl],
     },
     robots: {
       index: true,

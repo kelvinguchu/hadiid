@@ -5,7 +5,7 @@ import { ServicesCTA } from "@/components/services";
 import { generatePageMetadata } from "@/lib/seo-config";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Our Work | HADIID Industries",
+  title: "Our Work | Hadiid Industries",
   description:
     "A showcase of our dedication to quality, precision, and craftsmanship. See the HADIID standard in action.",
   path: "/our-work",
