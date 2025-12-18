@@ -1,5 +1,6 @@
 export { HeroSection } from "./hero-section";
 export { FeaturesBar } from "./features-bar";
+export { PartnersMarquee } from "./partners-marquee";
 export { AboutSection } from "./about-section";
 export { WhyChooseUs } from "./why-choose-us";
 export { ServicesOverview } from "./services-overview";

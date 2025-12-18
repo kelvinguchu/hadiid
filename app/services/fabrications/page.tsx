@@ -35,7 +35,7 @@ const fabricationServices = [
       "Climate control modifications",
       "Local compliance certification",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC01409.jpg",
   },
   {
     icon: FaShieldAlt,
@@ -49,7 +49,7 @@ const fabricationServices = [
       "Skid plates (engine, gearbox, fuel tank)",
       "Brush guards and light mounts",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC01530.jpg",
   },
   {
     icon: FaGasPump,
@@ -63,7 +63,7 @@ const fabricationServices = [
       "Roof racks and cargo systems",
       "Tool boxes and storage solutions",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC01637.jpg",
   },
   {
     icon: FaCogs,
@@ -77,7 +77,7 @@ const fabricationServices = [
       "Lift kit installation",
       "Shock absorber upgrades",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC01677.jpg",
   },
   {
     icon: FaWrench,
@@ -91,7 +91,7 @@ const fabricationServices = [
       "DPF delete (off-road only)",
       "Custom manifolds",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC09788.jpg",
   },
   {
     icon: FaIndustry,
@@ -104,7 +104,7 @@ const fabricationServices = [
       "Mining vehicle modifications",
       "Equipment mounting brackets",
     ],
-    image: "/images/specialized-fabiractions1.jpeg",
+    image: "/lorry-making/DSC01666.jpg",
   },
 ];
 
@@ -233,7 +233,7 @@ export default function FabricationsPage() {
       <PageHeader
         title='Specialized Fabrication'
         subtitle='Custom metalwork and vehicle adaptations for unique operational requirements.'
-        backgroundImage='/images/specialized-fabiractions1.jpeg'
+        backgroundImage='/workers/DSC09770.jpg'
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "Specialized Fabrication" },
@@ -282,7 +282,7 @@ export default function FabricationsPage() {
                 <div className='relative'>
                   <div className='relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl'>
                     <Image
-                      src='/images/specialized-fabiractions1.jpeg'
+                      src='/workers/DSC09780.jpg'
                       alt='Specialized fabrication'
                       fill
                       className='object-cover'
@@ -345,7 +345,7 @@ export default function FabricationsPage() {
         {/* Capabilities Section */}
         <section className='py-6 md:py-8 bg-background'>
           <div className='container mx-auto'>
-            <div className='grid lg:grid-cols-2 gap-6 lg:gap-10 items-center'>
+            <div className='grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch'>
               <AnimatedSection>
                 <Badge className='mb-4'>Workshop Capabilities</Badge>
                 <h2 className='text-3xl md:text-4xl font-bold mb-6'>
@@ -370,10 +370,10 @@ export default function FabricationsPage() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection>
-                <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl'>
+              <AnimatedSection className='h-full'>
+                <div className='relative aspect-video lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl'>
                   <Image
-                    src='/images/specialized-fabiractions1.jpeg'
+                    src='/workers/DSC09735.jpg'
                     alt='Fabrication workshop'
                     fill
                     className='object-cover'
@@ -456,7 +456,7 @@ export default function FabricationsPage() {
                 <div className='grid grid-cols-2 gap-4'>
                   <div className='relative aspect-square rounded-2xl overflow-hidden'>
                     <Image
-                      src='/images/specialized-fabiractions1.jpeg'
+                      src='/lorry-making/DSC01598.jpg'
                       alt='Project 1'
                       fill
                       className='object-cover'
@@ -464,7 +464,7 @@ export default function FabricationsPage() {
                   </div>
                   <div className='relative aspect-square rounded-2xl overflow-hidden'>
                     <Image
-                      src='/images/specialized-fabiractions1.jpeg'
+                      src='/lorry-making/DSC01632.jpg'
                       alt='Project 2'
                       fill
                       className='object-cover'
@@ -472,7 +472,7 @@ export default function FabricationsPage() {
                   </div>
                   <div className='relative aspect-square rounded-2xl overflow-hidden'>
                     <Image
-                      src='/images/specialized-fabiractions1.jpeg'
+                      src='/lorry-making/DSC09803.jpg'
                       alt='Project 3'
                       fill
                       className='object-cover'
@@ -480,7 +480,7 @@ export default function FabricationsPage() {
                   </div>
                   <div className='relative aspect-square rounded-2xl overflow-hidden'>
                     <Image
-                      src='/images/specialized-fabiractions1.jpeg'
+                      src='/lorry-making/DSC09862.jpg'
                       alt='Project 4'
                       fill
                       className='object-cover'

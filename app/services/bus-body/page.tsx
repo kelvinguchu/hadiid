@@ -31,7 +31,7 @@ const busTypes = [
     icon: FaGraduationCap,
     description:
       "Safe and reliable school buses designed to protect students on their daily commute.",
-    image: "/images/schoolbuses/DSC09510.webp",
+    image: "/school-buses/DSC09536.jpg",
     capacity: "25-67 seats",
     features: [
       "Emergency exits on all sides",
@@ -45,7 +45,7 @@ const busTypes = [
     icon: FaCity,
     description:
       "City buses optimized for frequent stops and high passenger turnover.",
-    image: "/images/bus.png",
+    image: "/psv-bus/DSC00980.jpg",
     capacity: "30-60 seats",
     features: [
       "Low floor entry option",
@@ -59,7 +59,7 @@ const busTypes = [
     icon: FaRoute,
     description:
       "Comfortable long-distance coaches for intercity and cross-border travel.",
-    image: "/images/bus.png",
+    image: "/psv-bus/DSC09816.jpg",
     capacity: "45-55 seats",
     features: [
       "Reclining seats with legroom",
@@ -73,7 +73,7 @@ const busTypes = [
     icon: FaMountain,
     description:
       "Specially designed for tourism with panoramic views and enhanced comfort.",
-    image: "/images/bus.png",
+    image: "/school-buses/DSC09517.jpg",
     capacity: "20-40 seats",
     features: [
       "Large viewing windows",
@@ -87,7 +87,7 @@ const busTypes = [
     icon: FaUsers,
     description:
       "Employee shuttle buses for corporate and industrial transport needs.",
-    image: "/images/bus.png",
+    image: "/school-bus-making/DSC00979.jpg",
     capacity: "25-50 seats",
     features: [
       "Comfortable seating",
@@ -101,7 +101,7 @@ const busTypes = [
     icon: FaWheelchair,
     description:
       "Wheelchair accessible buses for inclusive public transportation.",
-    image: "/images/bus.png",
+    image: "/psv-bus/DSC00992.jpg",
     capacity: "20-35 seats",
     features: [
       "Wheelchair ramps/lifts",
@@ -148,8 +148,6 @@ const chassisBrands = [
   "Volvo",
   "MAN",
   "Tata",
-  "Ashok Leyland",
-  "BYD Electric",
 ];
 
 const process = [
@@ -220,7 +218,7 @@ export default function BusBodyPage() {
       <PageHeader
         title='Bus Body Building'
         subtitle='Custom bus bodies designed for African conditions - safe, durable, and efficient.'
-        backgroundImage='/images/schoolbuses/DSC09520.webp'
+        backgroundImage='/school-buses/DSC09530.jpg'
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "Bus Body Building" },
@@ -268,7 +266,7 @@ export default function BusBodyPage() {
                 <div className='relative'>
                   <div className='relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl'>
                     <Image
-                      src='/images/schoolbuses/DSC09510.webp'
+                      src='/school-bus-making/DSC01391.jpg'
                       alt='School bus'
                       fill
                       className='object-cover'
@@ -298,8 +296,8 @@ export default function BusBodyPage() {
             <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
               {designFeatures.map((feature) => (
                 <AnimatedSection key={feature.title}>
-                  <Card className='h-full border-none shadow-lg hover:shadow-xl transition-shadow'>
-                    <CardContent className='p-6 text-center'>
+                  <Card className='h-full border-none shadow-lg hover:shadow-xl transition-shadow p-0'>
+                    <CardContent className='p-3 text-center'>
                       <div className='w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4'>
                         <feature.icon className='w-8 h-8 text-primary' />
                       </div>
@@ -334,7 +332,7 @@ export default function BusBodyPage() {
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
               {busTypes.map((bus) => (
                 <AnimatedSection key={bus.name}>
-                  <Card className='h-full overflow-hidden group hover:shadow-xl transition-all'>
+                  <Card className='h-full overflow-hidden group hover:shadow-xl transition-all p-0'>
                     <div className='relative aspect-video overflow-hidden'>
                       <Image
                         src={bus.image}

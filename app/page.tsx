@@ -1,6 +1,7 @@
 import {
   HeroSection,
   FeaturesBar,
+  PartnersMarquee,
   AboutSection,
   WhyChooseUs,
   ServicesOverview,
@@ -15,7 +16,11 @@ export default function Home() {
       <HeroSection />
       <div className='px-4'>
         <FeaturesBar />
+      </div>
 
+      <PartnersMarquee />
+
+      <div className='px-4'>
         <AboutSection />
 
         <WhyChooseUs />
@@ -34,7 +39,7 @@ export default function Home() {
             "Curtain Side Trailers",
             "Drop Side Trailers",
           ]}
-          imageSrc='/images/kenyan_trailer.jpeg'
+          imageSrc='/lorries/DSC09751.jpg'
           imageAlt='Custom trailer fabrication'
           reverse
         />
@@ -50,7 +55,7 @@ export default function Home() {
               "Luxury & Long-Distance Coaches",
               "Custom Body Conversions",
             ]}
-            imageSrc='/images/bus.png'
+            imageSrc='/school-bus-making/DSC01396.jpg'
             imageAlt='Modern white bus body'
           />
         </div>
@@ -67,7 +72,7 @@ export default function Home() {
             "Flatbed & Dropside Decks",
             "Custom Utility & Crane Mounts",
           ]}
-          imageSrc='/images/truck-body4.jpeg'
+          imageSrc='/lorry-making/DSC01575.jpg'
           imageAlt='Custom-built truck body'
           reverse
         />

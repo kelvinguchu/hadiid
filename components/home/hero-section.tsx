@@ -5,10 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+
+const heroImages = [
+  "/images-2/hero.jpg",
+  "/images-2/hero-1.jpg",
+  "/images-2/hero-2.jpg",
+  "/images-2/hero-3.jpg",
+];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const hasAnimated = useRef(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!hasAnimated.current) {
@@ -17,24 +37,59 @@ export function HeroSection() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
-    <section className='relative h-[80vh] min-h-125 max-h-175'>
-      {/* Background Image */}
+    <section className='relative h-[80vh] min-h-125 max-h-175 overflow-hidden'>
+      {/* Background Carousel */}
       <div className='absolute inset-0'>
-        <Image
-          src='/images/schoolbuses/DSC09496.webp'
-          alt='Hadiid Industries - Vehicle Body Manufacturing'
-          fill
-          className='object-cover'
-          priority
-        />
-        <div className='absolute inset-0  bg-linear-to-r from-black/80 via-black/50 to-transparent' />
+        <Carousel
+          setApi={setApi}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          opts={{
+            loop: true,
+          }}
+          className='h-full w-full'>
+          <CarouselContent className='h-full ml-0'>
+            {heroImages.map((src, index) => (
+              <CarouselItem key={src} className='h-full pl-0 relative'>
+                <Image
+                  src={src}
+                  alt={`Hadiid Industries - Vehicle Body Manufacturing ${
+                    index + 1
+                  }`}
+                  fill
+                  className='object-cover'
+                  priority={index === 0}
+                />
+                <div className='absolute inset-0 bg-linear-to-r from-black/80 via-black/50 to-transparent' />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className='left-auto right-16 bottom-8 top-auto translate-y-0 z-10 bg-black/20 hover:bg-primary hover:text-primary-foreground border-white/20 text-white cursor-pointer transition-colors' />
+          <CarouselNext className='right-4 bottom-8 top-auto translate-y-0 z-10 bg-black/20 hover:bg-primary hover:text-primary-foreground border-white/20 text-white cursor-pointer transition-colors' />
+        </Carousel>
       </div>
 
       {/* Content */}
-      <div className='relative h-full container mx-auto px-6 lg:px-8 flex items-center'>
+      <div className='relative h-full container mx-auto px-6 lg:px-8 flex items-center pointer-events-none'>
         <div
-          className={`max-w-xl transition-all duration-700 ${
+          className={`max-w-xl transition-all duration-700 pointer-events-auto ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}>
           <div className='w-16 h-1 bg-primary mb-6' />
@@ -62,6 +117,23 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* Dots */}
+      <div className='absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10'>
+        {heroImages.map((src, index) => (
+          <button
+            key={src}
+            className={cn(
+              "h-2 rounded-full transition-all duration-300",
+              index === current
+                ? "bg-primary w-8"
+                : "bg-white/50 w-2 hover:bg-white/80"
+            )}
+            onClick={() => api?.scrollTo(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Bottom accent line */}

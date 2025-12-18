@@ -13,18 +13,38 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Services", hasDropdown: true },
   { href: "/our-work", label: "Portfolio" },
   { href: "/contact-us", label: "Contact" },
 ];
 
+const serviceLinks = [
+  { href: "/services", label: "All Services" },
+  { href: "/services/bus-body", label: "Bus Body Building" },
+  { href: "/services/trailers", label: "Heavy Duty Trailers" },
+  { href: "/services/truck-fabrications", label: "Truck Body Fabrication" },
+  { href: "/services/accident-repairs", label: "Accident Repairs" },
+  { href: "/services/fabrications", label: "Specialized Fabrication" },
+];
+
 export function Header() {
   const pathname = usePathname();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className='fixed top-0 left-0 right-0 z-50'>
@@ -85,16 +105,57 @@ export function Header() {
           <ul className='hidden lg:flex items-center gap-0.5'>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "relative px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
-                    pathname === link.href
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                  )}>
-                  {link.label}
-                </Link>
+                {link.hasDropdown && mounted ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        className={cn(
+                          "relative cursor-pointer px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
+                          pathname.startsWith("/services")
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                        )}>
+                        {link.label}
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align='start' className='w-56'>
+                      {serviceLinks.map((service) => (
+                        <DropdownMenuItem key={service.href} asChild>
+                          <Link
+                            href={service.href}
+                            className={cn(
+                              "cursor-pointer",
+                              pathname === service.href && "bg-accent"
+                            )}>
+                            {service.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : link.hasDropdown ? (
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "relative px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
+                      pathname.startsWith("/services")
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    )}>
+                    {link.label}
+                  </Link>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "relative px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
+                      pathname === link.href
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    )}>
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

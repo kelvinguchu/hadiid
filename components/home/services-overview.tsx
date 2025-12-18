@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { FaBus, FaTruck, FaArrowRight } from "react-icons/fa";
@@ -22,6 +23,7 @@ const services = [
     description:
       "Custom-designed bodies for city commuters, shuttles, and luxury coaches.",
     href: "/services/bus-body",
+    image: "/psv-bus/DSC09825.jpg",
   },
   {
     icon: LuContainer,
@@ -29,6 +31,7 @@ const services = [
     description:
       "Durable flatbeds, tankers, and tippers for demanding logistics operations.",
     href: "/services/trailers",
+    image: "/lorries/DSC09727.jpg",
   },
   {
     icon: FaTruck,
@@ -36,6 +39,7 @@ const services = [
     description:
       "Heavy-duty cargo bodies, refrigerated units, and utility vehicles.",
     href: "/services/truck-fabrications",
+    image: "/lorry-making/DSC01538.jpg",
   },
 ];
 
@@ -68,7 +72,16 @@ export function ServicesOverview() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className='group'>
               <Link href={service.href} className='block h-full'>
-                <Card className='h-full border-border hover:border-primary/40 transition-all duration-300'>
+                <Card className='h-full border-border hover:border-primary/40 transition-all duration-300 overflow-hidden'>
+                  <div className='relative h-48 w-full overflow-hidden'>
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className='object-cover transition-transform duration-500 group-hover:scale-105'
+                    />
+                    <div className='absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300' />
+                  </div>
                   <CardHeader>
                     <div className='w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-2 group-hover:bg-primary transition-colors duration-300'>
                       <service.icon className='w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300' />

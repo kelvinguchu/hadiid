@@ -24,7 +24,7 @@ const trailerTypes = [
     name: "Flatbed Trailers",
     description:
       "Versatile platform trailers for transporting heavy machinery, construction materials, and oversized cargo.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/flat-bed-3.jpg",
     features: [
       "40-53 ft lengths available",
       "Up to 80,000 lbs capacity",
@@ -35,7 +35,7 @@ const trailerTypes = [
     name: "Tipper Trailers",
     description:
       "Heavy-duty dump trailers designed for mining, quarry, and construction applications.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/tipper-4.jpg",
     features: [
       "Hyva hydraulic systems",
       "Hardox steel bodies",
@@ -46,7 +46,7 @@ const trailerTypes = [
     name: "Lowbed Trailers",
     description:
       "Specialized for transporting tall and heavy equipment like excavators and bulldozers.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/flat-bed-4.jpg",
     features: [
       "Detachable gooseneck",
       "Hydraulic ramps",
@@ -57,7 +57,7 @@ const trailerTypes = [
     name: "Tanker Trailers",
     description:
       "Engineered for safe transport of petroleum, chemicals, and food-grade liquids.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/oil-carrier.jpg",
     features: [
       "Aluminum & steel options",
       "Multi-compartment designs",
@@ -68,7 +68,7 @@ const trailerTypes = [
     name: "Skeletal Trailers",
     description:
       "Container chassis designed for efficient intermodal transport of ISO containers.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/skeleton.jpg",
     features: [
       "20ft & 40ft compatible",
       "Twist lock securing",
@@ -79,7 +79,7 @@ const trailerTypes = [
     name: "Side Tipper Trailers",
     description:
       "High-volume trailers for agricultural and bulk material transport with side discharge.",
-    image: "/images/kenyan_trailer.jpeg",
+    image: "/images-2/tipper-5.jpg",
     features: [
       "50+ cubic meter capacity",
       "Dual-side tipping",
@@ -179,7 +179,7 @@ export default function TrailersPage() {
       <PageHeader
         title='Heavy Duty Trailers'
         subtitle='German-engineered components combined with advanced fabrication techniques for unparalleled reliability and performance.'
-        backgroundImage='/images/schoolbuses/DSC09520.webp'
+        backgroundImage='/lorries/DSC09746.jpg'
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "Heavy Duty Trailers" },
@@ -230,7 +230,7 @@ export default function TrailersPage() {
                 <div className='relative'>
                   <div className='relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl'>
                     <Image
-                      src='/images/kenyan_trailer.jpeg'
+                      src='/lorries/DSC09750.jpg'
                       alt='Heavy duty trailer'
                       fill
                       className='object-cover'
@@ -296,7 +296,7 @@ export default function TrailersPage() {
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
               {trailerTypes.map((trailer) => (
                 <AnimatedSection key={trailer.name}>
-                  <Card className='h-full overflow-hidden group hover:shadow-xl transition-all'>
+                  <Card className='h-full overflow-hidden group hover:shadow-xl transition-all p-0'>
                     <div className='relative aspect-video overflow-hidden'>
                       <Image
                         src={trailer.image}

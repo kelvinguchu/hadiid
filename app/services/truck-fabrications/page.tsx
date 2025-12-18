@@ -193,7 +193,7 @@ export default function TruckFabricationsPage() {
       <PageHeader
         title='Truck Body Fabrication'
         subtitle='Transform your cab-and-chassis into a purpose-built transporter engineered for performance and efficiency.'
-        backgroundImage='/images/truck_body.png'
+        backgroundImage='/lorry-making/DSC01632.jpg'
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "Truck Body Fabrication" },
@@ -242,7 +242,7 @@ export default function TruckFabricationsPage() {
                 <div className='relative'>
                   <div className='relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl'>
                     <Image
-                      src='/images/truck_body.png'
+                      src='/lorry-making/DSC01598.jpg'
                       alt='Truck body fabrication'
                       fill
                       className='object-cover'
@@ -393,11 +393,11 @@ export default function TruckFabricationsPage() {
         {/* Additional Options */}
         <section className='py-6 md:py-8 bg-background'>
           <div className='container mx-auto'>
-            <div className='grid lg:grid-cols-2 gap-6 lg:gap-10 items-center'>
-              <AnimatedSection>
-                <div className='relative aspect-video rounded-2xl overflow-hidden shadow-2xl'>
+            <div className='grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch'>
+              <AnimatedSection className='h-full'>
+                <div className='relative aspect-video lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-2xl'>
                   <Image
-                    src='/images/truck_body.png'
+                    src='/images-2/water-lorry-2.jpg'
                     alt='Truck accessories'
                     fill
                     className='object-cover'

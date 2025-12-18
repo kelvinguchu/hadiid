@@ -14,7 +14,7 @@ const services = [
     title: "Heavy Duty Trailers",
     description:
       "Our trailers combine German-engineered components with advanced fabrication techniques to deliver unparalleled reliability and performance.",
-    imageSrc: "/images/kenyan_trailer.jpeg",
+    imageSrc: "/lorries/DSC09726.jpg",
     imageAlt: "Heavy duty trailers",
     features: [
       {
@@ -46,7 +46,7 @@ const services = [
     title: "Truck Body Fabrication",
     description:
       "We transform cabin-and-chassis vehicles into purpose-built transporters, engineered for load distribution, safety, and maximum operational efficiency.",
-    imageSrc: "/images/truck_body.png",
+    imageSrc: "/lorry-making/DSC01592.jpg",
     imageAlt: "Custom truck body fabrication",
     features: [
       {
@@ -73,7 +73,7 @@ const services = [
     title: "Bus Body Building",
     description:
       "We design and build bus bodies to fit manufacturer-supplied chassis, optimized for Africa's conditions with a focus on strength, safety, and efficiency.",
-    imageSrc: "/images/bus.png",
+    imageSrc: "/psv-bus/DSC09821.jpg",
     imageAlt: "Custom bus body building",
     features: [
       {
@@ -135,7 +135,7 @@ const services = [
     title: "Specialized Fabrication",
     description:
       "We deliver bespoke metalwork and vehicle adaptations to meet unique operational needs, from localizing imports to fabricating custom protective gear.",
-    imageSrc: "/images/specialized-fabiractions1.jpeg",
+    imageSrc: "/lorry-making/DSC01666.jpg",
     imageAlt: "Specialized vehicle fabrication",
     features: [
       {
@@ -170,7 +170,7 @@ export default function ServicesPage() {
       <PageHeader
         title='Our Services'
         subtitle='From precision accident repairs to custom vehicle fabrication, we provide expert fleet solutions that keep your business moving forward.'
-        backgroundImage='/images/schoolbuses/DSC09510.webp'
+        backgroundImage='/images-2/hero-2.jpg'
       />
 
       {services.map((service) => (
