@@ -33,7 +33,7 @@ export const siteConfig = {
     // site: "@hadiid",
   },
   verification: {
-    google: "googlefd69541c2b3caf53", // From the verification file in public folder
+    google: "googlefd69541c2b3caf53",
   },
 };
 

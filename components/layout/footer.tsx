@@ -9,12 +9,26 @@ import {
   HiClock,
   HiXCircle,
 } from "react-icons/hi";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about-us", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/our-work", label: "Our Work" },
+];
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/people/Hadiid-Industries-Limited/61583242753184/",
+    icon: FaFacebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/hadiidindustrieslimited/",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
 ];
 
 const contactInfo = [
@@ -54,6 +68,19 @@ export function Footer() {
               repairs. We combine modern technology with expert craftsmanship to
               deliver unmatched quality.
             </p>
+            <div className='flex gap-4 pt-2'>
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-muted-foreground hover:text-primary transition-colors'
+                  aria-label={social.label}>
+                  <social.icon className='h-6 w-6' />
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -111,6 +138,16 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} HADIID INDUSTRIES LTD. All Rights
           Reserved.
+        </p>
+        <p className='mt-2 text-xs text-muted-foreground'>
+          Developed and Designed by{" "}
+          <Link
+            href='https://www.kulmi.digital/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-primary transition-colors'>
+            Kulmi Digital
+          </Link>
         </p>
       </div>
     </footer>

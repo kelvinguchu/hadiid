@@ -103,61 +103,60 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <ul className='hidden lg:flex items-center gap-0.5'>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                {link.hasDropdown && mounted ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <button
-                        className={cn(
-                          "relative cursor-pointer px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
-                          pathname.startsWith("/services")
-                            ? "text-primary bg-primary/10"
-                            : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                        )}>
-                        {link.label}
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align='start' className='w-56'>
-                      {serviceLinks.map((service) => (
-                        <DropdownMenuItem key={service.href} asChild>
-                          <Link
-                            href={service.href}
-                            className={cn(
-                              "cursor-pointer",
-                              pathname === service.href && "bg-accent"
-                            )}>
-                            {service.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : link.hasDropdown ? (
+            {navLinks.map((link) => {
+              if (link.hasDropdown && mounted) {
+                return (
+                  <li key={link.href}>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <button
+                          className={cn(
+                            "relative cursor-pointer px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
+                            pathname.startsWith("/services")
+                              ? "text-primary bg-primary/10"
+                              : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                          )}>
+                          {link.label}
+                        </button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align='start' className='w-56'>
+                        {serviceLinks.map((service) => (
+                          <DropdownMenuItem key={service.href} asChild>
+                            <Link
+                              href={service.href}
+                              className={cn(
+                                "cursor-pointer",
+                                pathname === service.href && "bg-accent"
+                              )}>
+                              {service.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </li>
+                );
+              }
+
+              const isActive = link.hasDropdown 
+                ? pathname.startsWith("/services")
+                : pathname === link.href;
+
+              return (
+                <li key={link.href}>
                   <Link
                     href={link.href}
                     className={cn(
                       "relative px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
-                      pathname.startsWith("/services")
+                      isActive
                         ? "text-primary bg-primary/10"
                         : "text-muted-foreground hover:text-foreground hover:bg-accent"
                     )}>
                     {link.label}
                   </Link>
-                ) : (
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "relative px-5 py-2.5 text-sm font-medium transition-all duration-200 rounded-full",
-                      pathname === link.href
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                    )}>
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop Actions */}
