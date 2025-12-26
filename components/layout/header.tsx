@@ -50,7 +50,7 @@ export function Header() {
     <header className='fixed top-0 left-0 right-0 z-50'>
       {/* Top bar - always visible */}
       <div className='hidden lg:block bg-primary text-primary-foreground text-sm'>
-        <div className='container mx-auto py-2.5 flex justify-between items-center'>
+        <div className='container mx-auto md:px-4 py-2.5 flex justify-between items-center'>
           <div className='flex items-center gap-8'>
             <a
               href='tel:+254759888333'
@@ -88,7 +88,7 @@ export function Header() {
 
       {/* Main navigation */}
       <nav className='bg-background border-b border-border'>
-        <div className='container mx-auto flex justify-between items-center'>
+        <div className='container mx-auto md:px-4 flex justify-between items-center'>
           {/* Logo */}
           <Link href='/' className='flex items-center'>
             <Image
